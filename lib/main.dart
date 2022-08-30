@@ -6,6 +6,8 @@ import 'package:fetin_2022/screens/signUp.dart';
 import 'package:fetin_2022/teste.dart';
 import 'package:flutter/material.dart';
 
+import 'api/resultData.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       //color: AppColors.purple,
-      home: InputData(),
+      home: ResultData(value: '', option: '',),
     );
   }
 }

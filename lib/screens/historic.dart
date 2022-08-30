@@ -2,7 +2,7 @@ import 'package:fetin_2022/basic_templates/appColors.dart';
 import 'package:flutter/material.dart';
 
 class Historic extends StatefulWidget {
-  const Historic({Key? key}) : super(key: key);
+  const Historic({Key? key, required data}) : super(key: key);
 
   @override
   State<Historic> createState() => _HistoricState();

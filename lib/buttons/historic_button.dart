@@ -28,7 +28,7 @@ class HistoricButton extends StatelessWidget {
         ),
         onPressed: (){
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => Historic()));
+              MaterialPageRoute(builder: (context) => Historic(data: '',)));
         },
       ),
 
