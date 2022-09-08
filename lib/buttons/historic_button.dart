@@ -4,6 +4,8 @@ import 'package:fetin_2022/screens/home.dart';
 import 'package:fetin_2022/screens/start_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../api/resultData.dart';
+
 class HistoricButton extends StatelessWidget {
   const HistoricButton({Key? key}) : super(key: key);
 
@@ -28,7 +30,7 @@ class HistoricButton extends StatelessWidget {
         ),
         onPressed: (){
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => Historic(data: '',)));
+              MaterialPageRoute(builder: (context) => ResultData(value: 'value', option: 'option')));
         },
       ),
 

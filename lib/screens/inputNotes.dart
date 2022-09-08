@@ -3,13 +3,17 @@ import 'package:flutter/material.dart';
 
 import '../basic_templates/app_text_styles.dart';
 
-class InputData extends StatefulWidget {
-  const InputData({Key? key}) : super(key: key);
+class InputNotes extends StatefulWidget {
+  const InputNotes({Key? key, required this.criterios, required this.alternativas}) : super(key: key);
+
+  final String criterios;
+  final String alternativas;
+
   @override
-  State<InputData> createState() => _InputDataState();
+  State<InputNotes> createState() => _InputNotesState();
 }
 
-class _InputDataState extends State<InputData> {
+class _InputNotesState extends State<InputNotes> {
 
   final double borderRadius = 5;
   final double headerHeight = 85;

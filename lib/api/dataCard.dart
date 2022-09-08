@@ -84,21 +84,21 @@ class CardWidget extends StatelessWidget {
                 ),
               ),
 
-              // Padding(
-              //   padding: const EdgeInsets.symmetric(horizontal: 8),
-              //   child: Row(
-              //     children: [
-              //       Flexible(
-              //         child: Text(
-              //           data.valores.toString(),
-              //           style: AppTextStyles.body,
-              //           overflow: TextOverflow.ellipsis,
-              //           maxLines: 2,
-              //         ),
-              //       ),
-              //     ],
-              //   ),
-              // ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                child: Row(
+                  children: [
+                    Flexible(
+                      child: Text(
+                        data.valores.toString(),
+                        style: AppTextStyles.body,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 2,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),

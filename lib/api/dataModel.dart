@@ -4,13 +4,13 @@ class DataModel{
   final int id;
   final String nome;
   final double peso;
-  //final double valores;
+  final List<double>? valores;
 
   DataModel({
     required this.id,
     required this.nome,
     required this.peso,
-    //required this.valores,
+    required this.valores,
   });
 
   Map<String, dynamic> toMap(){
@@ -18,7 +18,7 @@ class DataModel{
       'id' : id,
       'nome': nome,
       'peso' : peso,
-      //'valores' : valores,
+      'valores' : valores,
     };
   }
 
@@ -27,7 +27,7 @@ class DataModel{
       id: map['id'],
       nome: map['nome'] ?? '',
       peso: map["peso"].toDouble(),
-      //valores: map['valores']
+      valores : map['valores'].cast<double>(),
     );
   }
 

@@ -1,6 +1,8 @@
+import 'package:fetin_2022/api/resultData.dart';
 import 'package:fetin_2022/basic_templates/appColors.dart';
 import 'package:fetin_2022/screens/home.dart';
-import 'package:fetin_2022/screens/inputData.dart';
+import 'package:fetin_2022/screens/inputMxN.dart';
+import 'package:fetin_2022/screens/inputNotes.dart';
 import 'package:fetin_2022/screens/start_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +30,7 @@ class InputDataButton extends StatelessWidget {
         ),
         onPressed: (){
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => InputData()));
+              MaterialPageRoute(builder: (context) => InputMxN()));
         },
       ),
 
