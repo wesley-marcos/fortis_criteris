@@ -10,11 +10,7 @@ import 'dataModel.dart';
 
 final String url = "https://foris-criteris-apiv2.herokuapp.com";
 
-// Estrutura basica das requisições
-BaseOptions options = new BaseOptions(
-  baseUrl: "https://foris-criteris-apiv2.herokuapp.com",
-  connectTimeout: 5000,
-);
+
 
 class InputDataTest extends StatefulWidget {
 
@@ -30,6 +26,22 @@ class InputDataTest extends StatefulWidget {
 }
 
 class InputDataTestState extends State<InputDataTest> {
+
+  var dio = Dio();
+
+  ApiRepositary(){
+    if(dio == null){
+      // Estrutura basica das requisições
+      BaseOptions options = new BaseOptions(
+          baseUrl: "https://foris-criteris-apiv2.herokuapp.com",
+          receiveDataWhenStatusError: true,
+          connectTimeout: 60 * 1000,
+          receiveTimeout: 60 * 1000
+      );
+      dio = new Dio(options);
+    }
+  }
+
   @override
 
   void initState() {
@@ -42,12 +54,24 @@ class InputDataTestState extends State<InputDataTest> {
     <DataModel>[]; // Recebe os valores da requisição
 
     // Realiza a requisição
-    Response response = await Dio(options)
-        .post("/criterios/create");
+    // Response response = await Dio(options)
+    //     .post("/criterios/create/");
 
-    var dio = Dio();
-    var data = {'id': 6, 'nome': 'teste2', 'peso': 6.5, 'valores': [2.5, 4.8, 9.6]};
-    response = await dio.post("/criterios/create", data: {}, options: Options(headers: data));
+    // var dio = Dio();
+    // var data = {'id': 6, 'nome': 'teste2', 'peso': 6.5, 'valores': [2.5, 4.8, 9.6]};
+    // Response response = await Dio(options).post("/criterios/create/", data: {}, options: Options(headers: data));
+
+    try{
+
+      var data = {'nome': 'teste_com_dio', 'peso': 5, 'valores':[2,3,8]};
+      Response response = await dio.post(
+          "/criterios/create/", data: {}, options: Options(headers: data));
+    } on DioError catch(ex){
+      if(ex.type == DioErrorType){
+        throw Exception("Connection Timeout Exception");
+      }
+      throw Exception(ex.message);
+    }
 
     //var data = {'city-id': '371000000000'};
     //var response1 = await dio.post(url, data: {}, options: Options(headers: data));

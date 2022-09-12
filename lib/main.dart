@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       //color: AppColors.purple,
-      home: Home()
+      home: InputDataTest(value: '', option: '',)
     );
   }
 }

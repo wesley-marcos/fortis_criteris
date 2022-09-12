@@ -1,15 +1,19 @@
 import 'dart:convert';
 
 class DataModel{
-  final int id;
+  final String id;
   final String nome;
-  final double peso;
-  final List<double>? valores;
+  final String peso;
+  final String nLinhas;
+  final String nColunas;
+  final List<String>? valores;
 
   DataModel({
     required this.id,
     required this.nome,
     required this.peso,
+    required this.nLinhas,
+    required this.nColunas,
     required this.valores,
   });
 
@@ -18,6 +22,8 @@ class DataModel{
       'id' : id,
       'nome': nome,
       'peso' : peso,
+      'nLinhas' : nLinhas,
+      'nColunas' : nColunas,
       'valores' : valores,
     };
   }
@@ -26,8 +32,10 @@ class DataModel{
     return DataModel(
       id: map['id'],
       nome: map['nome'] ?? '',
-      peso: map["peso"].toDouble(),
-      valores : map['valores'].cast<double>(),
+      peso: map["peso"] ?? '',
+      nLinhas: map['nLinhas'] ?? '',
+      nColunas: map['nColunas'] ?? '',
+      valores : map['valores'] ?? '',
     );
   }
 

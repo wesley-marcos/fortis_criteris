@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import '../basic_templates/appColors.dart';
 import '../basic_templates/app_text_styles.dart';
@@ -6,7 +8,9 @@ import 'dataCard.dart';
 import 'package:dio/dio.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
+import 'dart:io';
 import 'dataModel.dart';
+import 'dart:convert';
 
 final String url = "https://foris-criteris-apiv2.herokuapp.com";
 
@@ -32,13 +36,26 @@ class TestHttpState extends State<TestHttp> {
     this.submitData();
   }
 
+  static final Map<String, String> httpHeaders = {
+    HttpHeaders.contentTypeHeader: "application/json",
+    "Connection" : "Keep-Alive",
+    "Keep-Alive" : "timeout = 5, max = 1000"
+  };
+
   Future<void> submitData() async {
-    var response  = await http.post(Uri.https('regres.in', '/criterios/create'),
-        body: {'id': '6', 'nome': 'teste2'}
-    );
+    var response  = await http.post(
+        Uri.parse('https://foris-criteris-apiv2.herokuapp.com/criterios/create/'),
+        body: jsonEncode({'nome': 'teste_12.09', 'peso': 1.5,
+          'valores': [1, 2, 9]}),
+        headers: TestHttpState.httpHeaders);
 
     var data = response.body;
     print(data);
+
+    FlutterError.onError = (FlutterErrorDetails details) {
+      print("=================== CAUGHT FLUTTER ERROR");
+      // Send report
+    };
 
     if(response.statusCode == 200){
       String r = response.body;
