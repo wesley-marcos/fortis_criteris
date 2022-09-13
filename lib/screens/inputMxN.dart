@@ -15,8 +15,21 @@ class _InputMxNState extends State<InputMxN> {
 
   final _criterio_controller = TextEditingController();
   final _alternativas_controller = TextEditingController();
-  String criterio = '';
-  String alternativas = '';
+  int criterio = 0;
+  int alternativas = 0;
+
+  //Função que salvará a variável e a passará para a próxima tela
+  void Salvar(){
+
+    setState((){
+
+      criterio = int.parse(_criterio_controller.text);
+      alternativas = int.parse(_alternativas_controller.text);
+
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => InputNotes(criterios: criterio, alternativas: alternativas,)));
+    });
+  }
 
 
   @override
@@ -74,7 +87,22 @@ class _InputMxNState extends State<InputMxN> {
              ),
            ),
 
-           //MxNButton(context)
+           const SizedBox(
+             width: 20,
+             height: 100,
+           ),
+
+           ElevatedButton(
+               onPressed: Salvar,
+               child: const Text(
+             "Próximo",
+             style: TextStyle(
+                 fontSize: 20,
+                 color: Colors.white,
+                 fontWeight: FontWeight.bold
+             ),
+           ),
+           )
           ]
         ),
       ),
@@ -83,17 +111,17 @@ class _InputMxNState extends State<InputMxN> {
   }
 }
 
-//  OutlinedButton mxnButton (BuildContext context){
-//    return OutlinedButton(
-//      style: OutlinedButton.styleFrom(minimumSize: const Size(200, 50)),
-//        onPressed: (){
-//          Navigator.push(context,
-//              MaterialPageRoute(builder: (context){
-//            return const InputNotes(criterios: _criterio_controller.text, alternativas: 'alternativas',)));
-//        },
-//      child: child)
-//  }
-//
+ // OutlinedButton mxnButton (BuildContext context){
+ //   return OutlinedButton(
+ //     style: OutlinedButton.styleFrom(minimumSize: const Size(200, 50)),
+ //       onPressed: (){
+ //         Navigator.push(context,
+ //             MaterialPageRoute(builder: (context){
+ //           return const InputNotes(criterios: _criterio_controller.text, alternativas: 'alternativas',)));
+ //       },
+ //     child: child)
+ // }
+
 // Container(
 // decoration: BoxDecoration(
 // borderRadius: BorderRadius.circular(20),

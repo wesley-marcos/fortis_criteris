@@ -1,13 +1,14 @@
 import 'package:fetin_2022/basic_templates/appColors.dart';
 import 'package:flutter/material.dart';
-
 import '../basic_templates/app_text_styles.dart';
 
 class InputNotes extends StatefulWidget {
-  const InputNotes({Key? key, required this.criterios, required this.alternativas}) : super(key: key);
+  InputNotes({Key? key, required this.criterios, required this.alternativas}) : super(key: key);
 
-  final String criterios;
-  final String alternativas;
+  final int criterios;
+  final int alternativas;
+  List<Widget> opcoes = <Widget>[];
+  List<int> colunas = [];
 
   @override
   State<InputNotes> createState() => _InputNotesState();
@@ -17,10 +18,77 @@ class _InputNotesState extends State<InputNotes> {
 
   final double borderRadius = 5;
   final double headerHeight = 85;
-  //final Color borderColor = AppColors.border;
-  //final Color headerColor = AppColors.darkBlue;
-  //final Color backColor = AppColors.white;
-  //final VoidCallback onTap;
+  InputNotes n = new InputNotes(criterios: 0, alternativas: 0,);
+
+  final _nota = TextEditingController();
+  //final _alternativas_controller = TextEditingController();
+  int nota = 0;
+  List<int> notas = [];
+  int alternativas = 5;
+
+  //Função que salvará a variável e a passará para a próxima tela
+  void Salvar(){
+
+    setState((){
+
+      nota = int.parse(_nota.text);
+
+      if(nota < 1 || nota > 10){
+        aviso(context);
+      }
+
+      else{
+        notas.add(nota);
+
+      }
+
+      //alternativas = int.parse(_alternativas_controller.text);
+
+      // Navigator.push(context,
+      //     MaterialPageRoute(builder: (context) => InputNotes(criterios: criterio, alternativas: alternativas,)));
+    });
+  }
+
+
+  Container cards(int q){
+
+    return Container(
+          color: Colors.green,
+          padding: EdgeInsets.fromLTRB(30, 10, 10, 10),
+          margin: EdgeInsets.all(10.0),
+          child: Column(
+            children: [
+              Text(
+                "Option 1",
+                style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black
+                ),),
+
+              SizedBox(height: 20),
+
+              TextFormField(
+                onEditingComplete: Salvar,
+                controller: _nota,
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(
+                  labelText: "Note",
+                  labelStyle: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20
+                  ),
+                ),
+              ),
+
+              Text("Inputed note is ${notas}")
+            ],
+          )
+      );
+
+
+  }
 
   var _note;
   void _update_note(val){
@@ -34,7 +102,7 @@ class _InputNotesState extends State<InputNotes> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Input of data",
+          "Entrada de Notas",
           style: TextStyle(
             fontSize:25
           ),
@@ -50,159 +118,19 @@ class _InputNotesState extends State<InputNotes> {
               child: Column(
                 children: [
 
-                  Text("Criteria #", style: AppTextStyles.title),
+                  Text("Critério ${widget.criterios}", style: AppTextStyles.title),
+
+                  cards(widget.alternativas),
 
                   Expanded(
-                    child: GridView(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-                      children: <Widget>[
-                        Container(
-                            color: Colors.green,
-                            padding: EdgeInsets.fromLTRB(30, 10, 10, 10),
-                            margin: EdgeInsets.all(10.0),
-                            child: Column(
-                              children: [
-                                Text(
-                                  "Option 1",
-                                  style: TextStyle(
-                                      fontSize: 25,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black
-                                  ),),
-
-                                SizedBox(height: 20),
-
-                                TextFormField(
-                                  onChanged: (val){
-                                    _update_note(val);
-                                  },
-                                  keyboardType: TextInputType.number,
-                                  decoration: const InputDecoration(
-                                    labelText: "Note",
-                                    labelStyle: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20
-                                    ),
-                                  ),
-                                ),
-                                
-                                Text("Inputed note is $_note")
-                              ],
-                            )
-                        ),
-
-                        Container(
-                          color: Colors.red,
-                          padding: EdgeInsets.fromLTRB(40, 10, 10, 10),
-                          margin: EdgeInsets.all(10.0),
-                          child: Text(
-                            "Option 2",
-                            style: TextStyle(
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black
-                            ),),),
-
-                        Container(
-                          color: Colors.purple,
-                          padding: EdgeInsets.fromLTRB(40, 10, 10, 10),
-                          margin: EdgeInsets.all(10.0),
-                          child: Text(
-                            "Option 3",
-                            style: TextStyle(
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black
-                            ),),),
-
-                        Container(
-                          color: Colors.yellow,
-                          padding: EdgeInsets.fromLTRB(40, 10, 10, 10),
-                          margin: EdgeInsets.all(10.0),
-                          child: Text(
-                            "Option 4",
-                            style: TextStyle(
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black
-                            ),),),
-
-                        Container(
-                          color: Colors.blueAccent,
-                          padding: EdgeInsets.fromLTRB(40, 10, 10, 10),
-                          margin: EdgeInsets.all(10.0),
-                          child: Text(
-                            "Option 5",
-                            style: TextStyle(
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black
-                            ),),),
-
-                        Container(
-                          color: Colors.black,
-                          padding: EdgeInsets.fromLTRB(40, 10, 10, 10),
-                          margin: EdgeInsets.all(10.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "Option 6",
-                                style: TextStyle(
-                                    fontSize: 25,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white
-                                ),),
-
-                              TextFormField(
-                                keyboardType: TextInputType.number,
-                                decoration: const InputDecoration(
-                                  labelText: "E-mail",
-                                  labelStyle: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 20
-                                  ),
-                                  suffixIcon: Icon(Icons.email, color: Colors.black),
-                                ),
-                              ),
-                            ],
-                          )
-                        ),
-
-                        Container(
-                          color: Colors.brown,
-                          padding: EdgeInsets.fromLTRB(40, 10, 10, 10),
-                          margin: EdgeInsets.all(10.0),
-                          child: Text(
-                            "Option 7",
-                            style: TextStyle(
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black
-                            ),),),
-
-                        Container(
-                          color: Colors.blueGrey,
-                          padding: EdgeInsets.fromLTRB(40, 10, 10, 10),
-                          margin: EdgeInsets.all(10.0),
-                          child: Text(
-                            "Option 8",
-                            style: TextStyle(
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black
-                            ),),),
-                      ],
-                    )
-                    // GridView.count(
-                    //   crossAxisSpacing: 12,
-                    //   mainAxisSpacing: 12,
-                    //   crossAxisCount: 2,
-                    //   childAspectRatio: 0.85,
-                    //   //children:
-                    //   //onTap: () => navigate(e),
-                    // ),
+                    child: GridView.count(
+                      crossAxisSpacing: 12,
+                      mainAxisSpacing: 12,
+                      crossAxisCount: 2,
+                      childAspectRatio: 0.85,
+                      children: widget.opcoes
+                          .map((e) => cards(widget.alternativas)).toList(),
+                    ),
                   ),
                 ],
               )
@@ -213,5 +141,54 @@ class _InputNotesState extends State<InputNotes> {
   }
 }
 
+void aviso (BuildContext context){
 
+  var alertDialog = AlertDialog(
+    title: Text("Uma mensagem foi enviada com sucesso"),
 
+  );
+
+  showDialog(
+      context: context,
+      builder: (BuildContext context){
+
+        Future.delayed(Duration(seconds: 2), () {
+
+        });
+
+        return Dialog(
+          backgroundColor: Colors.white,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0)
+          ),
+          insetAnimationDuration: Duration(seconds: 1),
+          child: Container(
+            height: 200.0,
+            child: Padding(
+              padding: EdgeInsets.all(25.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                      'Entre com uma nota de 1 a 10!',
+                      style: AppTextStyles.heading15
+                  ),
+
+                ],
+              ),
+            ),
+          ),
+        );
+      }
+  );
+}
+
+// void test(int q){
+//
+//   int i = 0;
+//
+//   while(i < q){
+//     cards();
+//   }
+// }
