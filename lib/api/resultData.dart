@@ -75,8 +75,22 @@ class ResultDataState extends State<ResultData> {
         ),
         body: SizedBox.expand(
           child: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    //AppColors.cornflowerBlue,
+                    //AppColors.dodgerBlue,
+                    AppColors.DeepSkyBlue,
+                    AppColors.LightSkyBlue,
+                    AppColors.SkyBlue,
+
+                  ],
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                )
+            ),
             padding: EdgeInsets.only(top: 10),
-            color: Colors.white,
+            //color: Colors.white,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8),
               child: Column(

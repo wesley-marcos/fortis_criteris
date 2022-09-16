@@ -6,11 +6,12 @@ import '../basic_templates/app_text_styles.dart';
 
 class InputNotes extends StatefulWidget {
   InputNotes({Key? key, required this.criterios, required this.alternativas,
-    required this.nomes}) : super(key: key);
+    required this.nomes, required this.pesos}) : super(key: key);
 
   int criterios;
   int alternativas;
   List<String> nomes = <String>[];
+  List<double> pesos = <double>[];
 
   List<String> colunas = [];
 
@@ -29,7 +30,7 @@ class _InputNotesState extends State<InputNotes> {
   //final _alternativas_controller = TextEditingController();
   int nota = 0;
   List<int> notas = [];
-  List<int> notas_aux = [];
+  //List<int> notas_aux = [];
   int alternativas = 3;
 
   //Função que salvará a variável e a passará para a próxima tela
@@ -42,7 +43,7 @@ class _InputNotesState extends State<InputNotes> {
       }
 
       else {
-        notas_aux.add(nota);
+        notas.add(nota);
       }
 
       //alternativas = int.parse(_alternativas_controller.text);
@@ -58,6 +59,16 @@ class _InputNotesState extends State<InputNotes> {
     int val = widget.nomes.length;
 
     return Container(
+        // decoration: BoxDecoration(
+        //     gradient: LinearGradient(
+        //       colors: [
+        //         Color(0xFF3CB371),
+        //         Color(0xFF90EE90),
+        //       ],
+        //       begin: Alignment.bottomCenter,
+        //       end: Alignment.topCenter,
+        //     )
+        // ),
         color: AppColors.darkBlue,
         padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
         margin: EdgeInsets.all(10.0),
@@ -65,13 +76,14 @@ class _InputNotesState extends State<InputNotes> {
           children: [
             //for(i = 0; i <= val - 1; i++)
             Container(
+
               //height: 700,
               child: Center(
                 child: Column(
                   children: [
 
                     Text(
-                      "Opção ${q+1}",
+                      "Opção ${q}",
                       style: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
@@ -174,14 +186,22 @@ class _InputNotesState extends State<InputNotes> {
           ),
           body: Container( //Tela grande
             decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("Images/fundo.png"),
-                    fit: BoxFit.cover
+                gradient: LinearGradient(
+                  colors: [
+                    //AppColors.cornflowerBlue,
+                    //AppColors.dodgerBlue,
+                    AppColors.DeepSkyBlue,
+                    AppColors.LightSkyBlue,
+                    AppColors.SkyBlue,
+
+                  ],
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
                 )
             ),
             padding: EdgeInsets.only(top: 5),
             child: Padding(
-                padding: const EdgeInsets.all(8),
+                padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
                 child: ListView( //Scroll Principal
                   children: [
                     for(i = 0; i < widget.criterios; i++)
@@ -201,6 +221,26 @@ class _InputNotesState extends State<InputNotes> {
                             ),
                           )
                       ),
+
+                    SizedBox(height: 30,),
+
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          primary: AppColors.steelBlue,
+                          fixedSize: Size(100, 50),
+                          side: BorderSide(color: Colors.black12),
+                          shape: BeveledRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)
+                            //RoundedRectangleBorder
+                          )
+                      ),
+                      onPressed: (){},
+                      child: const Text(
+                        "Calcular",
+                        style: TextStyle(
+                            fontSize: 22, color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                    )
                   ],
                 )
             ),

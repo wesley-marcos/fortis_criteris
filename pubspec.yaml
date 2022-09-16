@@ -36,12 +36,25 @@ dependencies:
   cupertino_icons: ^1.0.2
   http: ^0.13.5
 
+flutter_native_splash:
+  color: "##ffffff"
+  image: "Images/logo.png"
+  android: true
+
+#flutter_icons:
+#  image_path: "Images/logo.png"
+#  android: "launcher_icon"
+#  adaptive_icon_background: "##ffffff"
+#  adaptive_icon_foreground: "Images/logo.png"
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
   google_fonts: ^3.0.1
   gender_picker: ^1.1.0
   dio: ^4.0.6
+  flutter_native_splash: ^2.2.9
+  flutter_launcher_icons: ^0.10.0
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
@@ -77,6 +90,7 @@ flutter:
     - Images/fundo.png
     - Images/fundo_2.png
     - Images/i_criterio.png
+    - Images/logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -20,20 +20,26 @@ class HistoricButton extends StatelessWidget {
       width: 50,
       height: 50,
       child: ElevatedButton(
-        child: const Text(
-          "Historic",
-          style: TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-              fontWeight: FontWeight.bold
-          ),
+        style: ElevatedButton.styleFrom(
+            primary: AppColors.steelBlue,
+            elevation: 10,
+            fixedSize: Size(100, 50),
+            side: BorderSide(color: Colors.black12),
+            shape: BeveledRectangleBorder(
+                borderRadius: BorderRadius.circular(10)
+              //RoundedRectangleBorder
+            )
         ),
         onPressed: (){
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => ResultData(value: 'value', option: 'option')));
         },
-      ),
-
+        child: const Text(
+          "Histórico",
+          style: TextStyle(
+              fontSize: 22, color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+      )
     );
   }
 }

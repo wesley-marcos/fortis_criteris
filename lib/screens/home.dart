@@ -18,6 +18,24 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        decoration: BoxDecoration(
+            // image: DecorationImage(
+            //     image: AssetImage("Images/fundo.png"),
+            //     fit: BoxFit.cover
+            // )
+          gradient: LinearGradient(
+            colors: [
+              //AppColors.cornflowerBlue,
+              //AppColors.dodgerBlue,
+              AppColors.DeepSkyBlue,
+              AppColors.LightSkyBlue,
+              AppColors.SkyBlue,
+
+            ],
+            begin: Alignment.bottomCenter,
+            end: Alignment.topCenter,
+          )
+        ),
           padding: const EdgeInsets.only(top: 30, left: 30, right: 30),
           alignment: Alignment.center,
         child: ListView(
@@ -32,7 +50,7 @@ class _HomeState extends State<Home> {
 
             Container(
               alignment: Alignment.center,
-              child: Text("Hello",
+              child: Text("Bem vindo!",
                 style: AppTextStyles.title,
               ),
             ),
@@ -45,7 +63,7 @@ class _HomeState extends State<Home> {
             SizedBox(
               width: 200,
               height: 200,
-              child: Image.asset("Images/woman_profile.png", alignment: Alignment.center),
+              child: Image.asset("Images/man_profile.png", alignment: Alignment.center),
             ),
 
             const SizedBox(

@@ -22,10 +22,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      //color: AppColors.purple,
-      home: Home()
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        //color: AppColors.purple,
+        home: Home()
     );
   }
 }
