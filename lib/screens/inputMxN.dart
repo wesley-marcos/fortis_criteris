@@ -29,7 +29,7 @@ class _InputMxNState extends State<InputMxN> {
 
       alternativas = int.parse(_alternativas_controller.text);
 
-      if ((criterio & alternativas < 2) || (criterio & alternativas > 10))
+      if ((criterio & alternativas < 2) || (criterio & alternativas > 5))
         aviso(context);
       else {
         Navigator.push(
@@ -58,11 +58,9 @@ class _InputMxNState extends State<InputMxN> {
         decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                //AppColors.cornflowerBlue,
-                //AppColors.dodgerBlue,
                 AppColors.DeepSkyBlue,
                 AppColors.LightSkyBlue,
-                AppColors.SkyBlue,
+                AppColors.lightBlue,
 
               ],
               begin: Alignment.bottomCenter,

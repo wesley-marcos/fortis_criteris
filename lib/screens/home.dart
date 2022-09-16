@@ -25,11 +25,9 @@ class _HomeState extends State<Home> {
             // )
           gradient: LinearGradient(
             colors: [
-              //AppColors.cornflowerBlue,
-              //AppColors.dodgerBlue,
               AppColors.DeepSkyBlue,
               AppColors.LightSkyBlue,
-              AppColors.SkyBlue,
+              AppColors.lightBlue,
 
             ],
             begin: Alignment.bottomCenter,
@@ -68,7 +66,7 @@ class _HomeState extends State<Home> {
 
             const SizedBox(
               width: 20,
-              height: 100,
+              height: 250,
             ),
 
             InputDataButton(),
@@ -78,7 +76,7 @@ class _HomeState extends State<Home> {
               height: 40,
             ),
 
-            HistoricButton(),
+            //HistoricButton(),
           ],
         ),
       )

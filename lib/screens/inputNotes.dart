@@ -65,28 +65,33 @@ class _InputNotesState extends State<InputNotes> {
     }
   }
 
-  Container cards(int q) {
+  //List<String> opcao = <String>['A', 'B', 'C', 'D', 'E'];
 
-    int i = 1;
+  Container cards() {
+
+    //int i = 1;
     int val = widget.nomes.length;
 
     return Container(
-        // decoration: BoxDecoration(
-        //     gradient: LinearGradient(
-        //       colors: [
-        //         Color(0xFF3CB371),
-        //         Color(0xFF90EE90),
-        //       ],
-        //       begin: Alignment.bottomCenter,
-        //       end: Alignment.topCenter,
-        //     )
-        // ),
-        color: AppColors.darkBlue,
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color(0xFFE0FFFF),
+                AppColors.DeepSkyBlue
+              ],
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter,
+            ),
+          borderRadius: BorderRadius.circular(10)
+        ),
+        //color: AppColors.darkBlue,
         padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
         margin: EdgeInsets.all(10.0),
         child: Column(
           children: [
-            //for(i = 0; i <= val - 1; i++)
+            //for(int i = 0; i <= q.length; i++)
+            //for(var valor in q)
+             //q.forEach((String a)=>
             Container(
 
               //height: 700,
@@ -94,13 +99,13 @@ class _InputNotesState extends State<InputNotes> {
                 child: Column(
                   children: [
 
-                    Text(
-                      "Opção ${q}",
-                      style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black
-                      ),),
+                    // Text(
+                    //   "Opção ${q[i]}",
+                    //   style: TextStyle(
+                    //       fontSize: 25,
+                    //       fontWeight: FontWeight.bold,
+                    //       color: Colors.black
+                    //   ),),
 
                     SizedBox(height: 20),
 
@@ -115,7 +120,7 @@ class _InputNotesState extends State<InputNotes> {
                       controller: _nota,
                       keyboardType: TextInputType.number,
                       decoration: const InputDecoration(
-                        labelText: "  Nota",
+                        labelText: "        Nota",
                         labelStyle: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
@@ -124,7 +129,7 @@ class _InputNotesState extends State<InputNotes> {
                       ),
                     ),
 
-                    //Text("Entrada é ${notas_aux}")
+                    Text("Entrada é ${notas_aux}")
 
                   ],
                 ),
@@ -148,7 +153,8 @@ class _InputNotesState extends State<InputNotes> {
           mainAxisSpacing: 12,
           crossAxisCount: 2,
           childAspectRatio: 0.9,
-          children: opcoes.map((e) => cards(i)).toList(),
+          children: opcoes.map((e)
+          => cards()).toList(),
         ),
       );
     }
@@ -197,12 +203,9 @@ class _InputNotesState extends State<InputNotes> {
             decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    //AppColors.cornflowerBlue,
-                    //AppColors.dodgerBlue,
                     AppColors.DeepSkyBlue,
                     AppColors.LightSkyBlue,
-                    AppColors.SkyBlue,
-
+                    AppColors.lightBlue,
                   ],
                   begin: Alignment.bottomCenter,
                   end: Alignment.topCenter,
@@ -235,9 +238,9 @@ class _InputNotesState extends State<InputNotes> {
 
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          primary: AppColors.steelBlue,
+                          primary: Colors.blue,
                           fixedSize: Size(100, 50),
-                          side: BorderSide(color: Colors.black12),
+                          side: BorderSide(color: Colors.black26),
                           shape: BeveledRectangleBorder(
                               borderRadius: BorderRadius.circular(10)
                             //RoundedRectangleBorder

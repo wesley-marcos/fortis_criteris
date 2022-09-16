@@ -55,7 +55,18 @@ class _InputWeightState extends State<InputWeight> {
     int i = 1;
 
     return Container(
-        color: AppColors.darkBlue,
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color(0xFFE0FFFF),
+                AppColors.DeepSkyBlue
+              ],
+              begin: Alignment.bottomRight,
+              end: Alignment.topCenter,
+            ),
+            borderRadius: BorderRadius.circular(10)
+        ),
+        //color: AppColors.darkBlue,
         padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
         margin: EdgeInsets.all(10.0),
         child: Center(
@@ -151,11 +162,9 @@ class _InputWeightState extends State<InputWeight> {
             decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    //AppColors.cornflowerBlue,
-                    //AppColors.dodgerBlue,
                     AppColors.DeepSkyBlue,
                     AppColors.LightSkyBlue,
-                    AppColors.SkyBlue,
+                    AppColors.lightBlue,
 
                   ],
                   begin: Alignment.bottomCenter,

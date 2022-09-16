@@ -14,4 +14,6 @@ class AppColors {
   static final Color ciano = Color(0xFF00FFFF);
   static final Color turquesa = Color(0xFF40E0D0);
   static final Color steelBlue = Color(0xFF4682B4);
+  static final Color lightSteelBlue = Color(0xFFB0C4DE);
+  static final Color lightBlue = Color(0xFFADD8E6);
 }
