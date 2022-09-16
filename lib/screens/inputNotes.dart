@@ -1,5 +1,6 @@
 import 'package:fetin_2022/api/dataModel.dart';
 import 'package:fetin_2022/basic_templates/appColors.dart';
+import 'package:fetin_2022/screens/home.dart';
 import 'package:fetin_2022/screens/inputMxN.dart';
 import 'package:flutter/material.dart';
 import '../basic_templates/app_text_styles.dart';
@@ -15,6 +16,8 @@ class InputNotes extends StatefulWidget {
 
   List<String> colunas = [];
 
+  get initialValue => null;
+
   @override
   State<InputNotes> createState() => _InputNotesState();
 }
@@ -25,25 +28,26 @@ class _InputNotesState extends State<InputNotes> {
   final double headerHeight = 85;
   //InputNotes n = new InputNotes(criterios: 0, alternativas: 0,);
 
-  final _nota = TextEditingController();
+  late var _nota = TextEditingController();
 
   //final _alternativas_controller = TextEditingController();
-  int nota = 0;
-  List<int> notas = [];
-  //List<int> notas_aux = [];
+  double nota = 0;
+  List<double> notas = [];
+  List<double> notas_aux = [];
   int alternativas = 3;
 
   //Função que salvará a variável e a passará para a próxima tela
   void Salvar() {
     setState(() {
-      nota = int.parse(_nota.text);
+      nota = double.parse(_nota.text);
 
       if (nota < 1 || nota > 10) {
         aviso(context);
       }
 
       else {
-        notas.add(nota);
+        notas_aux.add(nota);
+        print("Inserido $notas_aux");
       }
 
       //alternativas = int.parse(_alternativas_controller.text);
@@ -51,6 +55,14 @@ class _InputNotesState extends State<InputNotes> {
       // Navigator.push(context,
       //     MaterialPageRoute(builder: (context) => InputNotes(criterios: criterio, alternativas: alternativas,)));
     });
+  }
+
+  void Final(){
+
+    for(var item in notas_aux){
+
+      notas.add(item);
+    }
   }
 
   Container cards(int q) {
@@ -93,6 +105,12 @@ class _InputNotesState extends State<InputNotes> {
                     SizedBox(height: 20),
 
                     TextFormField(
+                      onSaved: (value){},
+                      onFieldSubmitted: (value){
+                          setState((){
+                            _nota.text = widget.initialValue ?? '';
+                          });
+                      },
                       onEditingComplete: Salvar,
                       controller: _nota,
                       keyboardType: TextInputType.number,
@@ -106,7 +124,7 @@ class _InputNotesState extends State<InputNotes> {
                       ),
                     ),
 
-                    Text("Entrada é ${notas}")
+                    //Text("Entrada é ${notas_aux}")
 
                   ],
                 ),
@@ -116,15 +134,6 @@ class _InputNotesState extends State<InputNotes> {
         )
     );
   }
-
-  // var _note;
-  //
-  // void _update_note(val) {
-  //   setState(() {
-  //     _note = val;
-  //   });
-  // }
-
 
   @override
   Widget build(BuildContext context) {
@@ -234,7 +243,12 @@ class _InputNotesState extends State<InputNotes> {
                             //RoundedRectangleBorder
                           )
                       ),
-                      onPressed: (){},
+                      onPressed: (){
+                        Final();
+                        print("Notas inseridas: $notas");
+                        // Navigator.push(context,
+                        //     MaterialPageRoute(builder: (context) => Home()));
+                      },
                       child: const Text(
                         "Calcular",
                         style: TextStyle(
