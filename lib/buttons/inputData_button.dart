@@ -35,7 +35,7 @@ class InputDataButton extends StatelessWidget {
       height: 50,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-            primary: AppColors.cornflowerBlue,
+            primary: Colors.blue,
             elevation: 10,
             fixedSize: Size(100, 50),
             side: BorderSide(color: Colors.black12),

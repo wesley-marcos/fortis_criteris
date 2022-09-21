@@ -2,6 +2,7 @@ import 'package:fetin_2022/api/inputData.dart';
 import 'package:fetin_2022/basic_templates/appColors.dart';
 import 'package:fetin_2022/screens/home.dart';
 import 'package:fetin_2022/screens/inputNotes.dart';
+import 'package:fetin_2022/screens/ranking.dart';
 import 'package:fetin_2022/screens/start_screen.dart';
 import 'package:fetin_2022/screens/login.dart';
 import 'package:fetin_2022/screens/signUp.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         //color: AppColors.purple,
-        home: Home()
+        home: Ranking()
     );
   }
 }

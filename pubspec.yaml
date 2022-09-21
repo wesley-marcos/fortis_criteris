@@ -91,6 +91,9 @@ flutter:
     - Images/fundo_2.png
     - Images/i_criterio.png
     - Images/logo.png
+    - Images/first.png
+    - Images/sec.png
+    - Images/thi.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

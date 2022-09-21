@@ -2,6 +2,7 @@ import 'package:fetin_2022/api/dataModel.dart';
 import 'package:fetin_2022/basic_templates/appColors.dart';
 import 'package:fetin_2022/screens/home.dart';
 import 'package:fetin_2022/screens/inputMxN.dart';
+import 'package:fetin_2022/screens/ranking.dart';
 import 'package:flutter/material.dart';
 import '../basic_templates/app_text_styles.dart';
 
@@ -128,9 +129,6 @@ class _InputNotesState extends State<InputNotes> {
                         ),
                       ),
                     ),
-
-                    Text("Entrada é ${notas_aux}")
-
                   ],
                 ),
               ),
@@ -185,6 +183,7 @@ class _InputNotesState extends State<InputNotes> {
     //double height_1 = String(widget.alternativas);
     var height = double.parse('${widget.alternativas}');
     height = height * 130;
+    var size = MediaQuery.of(context).size;
 
     return WillPopScope(
         child: Scaffold(
@@ -212,55 +211,59 @@ class _InputNotesState extends State<InputNotes> {
                 )
             ),
             padding: EdgeInsets.only(top: 5),
-            child: Padding(
-                padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
-                child: ListView( //Scroll Principal
-                  children: [
-                    for(i = 0; i < widget.criterios; i++)
-                      Container( //Caixa maldita
-                          height: height,
-                          child: Center(
-                            child: Column(
-                              //physics: NeverScrollableScrollPhysics(),
-                              //mainAxisSize: MainAxisSize.max,
-                              children: [
-                                SizedBox(height: 30,),
-                                Text("Critério: ${widget.nomes[i]}",
-                                    style: AppTextStyles.title2),
+            child: LayoutBuilder(
+              builder: (_, constraints){
+                return Padding(
+                    padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
+                    child: ListView( //Scroll Principal
+                      children: [
+                        for(i = 0; i < widget.criterios; i++)
+                          Container( //Caixa maldita
+                              height: height,
+                              child: Center(
+                                child: Column(
+                                  //physics: NeverScrollableScrollPhysics(),
+                                  //mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    SizedBox(height: 30,),
+                                    Text("Critério: ${widget.nomes[i]}",
+                                        style: AppTextStyles.title2),
 
-                                inputCounter(),
-                              ],
-                            ),
-                          )
-                      ),
+                                    inputCounter(),
+                                  ],
+                                ),
+                              )
+                          ),
 
-                    SizedBox(height: 30,),
+                        SizedBox(height: 30,),
 
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          primary: Colors.blue,
-                          fixedSize: Size(100, 50),
-                          side: BorderSide(color: Colors.black26),
-                          shape: BeveledRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)
-                            //RoundedRectangleBorder
-                          )
-                      ),
-                      onPressed: (){
-                        Final();
-                        print("Notas inseridas: $notas");
-                        // Navigator.push(context,
-                        //     MaterialPageRoute(builder: (context) => Home()));
-                      },
-                      child: const Text(
-                        "Calcular",
-                        style: TextStyle(
-                            fontSize: 22, color: Colors.white, fontWeight: FontWeight.bold),
-                      ),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              primary: Colors.blue,
+                              fixedSize: Size(100, 50),
+                              side: BorderSide(color: Colors.black26),
+                              shape: BeveledRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10)
+                                //RoundedRectangleBorder
+                              )
+                          ),
+                          onPressed: (){
+                            Final();
+                            print("Notas inseridas: $notas");
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) => Ranking()));
+                          },
+                          child: const Text(
+                            "Calcular",
+                            style: TextStyle(
+                                fontSize: 22, color: Colors.white, fontWeight: FontWeight.bold),
+                          ),
+                        )
+                      ],
                     )
-                  ],
-                )
-            ),
+                );
+              },
+            )
           ),
         ),
 
