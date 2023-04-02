@@ -93,7 +93,28 @@ $ flutter run
 
 ---
 
-## 👥 Autor
+## 👥 Autores
+<h4 align="left">
+    <img style="border-radius: 50%; margin-right: 30px" src="https://avatars.githubusercontent.com/Antonio-AV" width="180px;" alt=""/>
+</h4>
+
+**Antonio Victor**
+
+[![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/antonio-victor-mendes-fonseca-26539924b/)
+[![Outlook Badge](https://img.shields.io/badge/Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:antonio.v@ges.inatel.br)
+
+
+<h4 align="left">
+    <img style="border-radius: 50%; margin-right: 30px" src="https://avatars.githubusercontent.com/pedro-balestra" width="180px;" alt=""/>
+</h4>
+
+**Pedro Balestra**
+
+[![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pedro-balestra/)
+[![Outlook Badge](https://img.shields.io/badge/Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:pedro.balestra@gec.inatel.br)
+
+
+
 <h4 align="left">
     <img style="border-radius: 50%; margin-right: 30px" src="https://avatars.githubusercontent.com/wesley-marcos" width="180px;" alt=""/>
 </h4>
@@ -102,7 +123,7 @@ $ flutter run
 
 
 [![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/wesley-marcos-borges/)
-[![Outlook Badge](https://img.shields.io/badge/Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:wesley.marcos@inatel.br)
+[![Outlook Badge](https://img.shields.io/badge/Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:wesley.marcos@gec.inatel.br)
 
 ---
 ## 📝 Licença
