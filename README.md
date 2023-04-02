@@ -1,16 +1,15 @@
-# fetin_2022
+# Fortis Criteris
 
-A new Flutter project.
+Esse é um projeto desenvolvido para apresentação na Fetin (Feira de Tecnologias do Inatel). A Fetin é um evento promovido pelo Instituto Nacional de Telecomunicações (Inatel) no qual os alunos de graduação podem apresentar os trabalhos desenvolvidos durante o ano.
 
-## Getting Started
+Baseado na crescente necessidade de tomarmos decisões assertivas a todo momento, desenvolvemos um aplicativo android que auxilia o usuário a tomar a melhor decisão, de forma lógica, baseado nos seus critérios e suas alternativas.
 
-This project is a starting point for a Flutter application.
+<h1 align="center">
+    <img align="center" src="Images\Splash Screen.png" width="300px;" alt="splash_screen"/>
+</h1>
 
-A few resources to get you started if this is your first Flutter project:
+Primeiro, pedimos ao usuário para entrar com o número de critérios que ele acha necessário para a decisão, junto ao número de alterativas que eletem.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<h1 align="center">
+    <img align="center" src="Images\Entrada.png" width="300px;" alt="entrada"/>
+</h1>

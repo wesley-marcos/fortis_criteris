@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         //color: AppColors.purple,
-        home: Ranking()
+        home: Home()
     );
   }
 }
