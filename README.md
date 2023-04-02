@@ -103,6 +103,15 @@ $ flutter run
 [![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/antonio-victor-mendes-fonseca-26539924b/)
 [![Outlook Badge](https://img.shields.io/badge/Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:antonio.v@ges.inatel.br)
 
+<h4 align="left">
+    <img style="border-radius: 50%; margin-right: 30px" src="https://avatars.githubusercontent.com/G-ilian" width="180px;" alt=""/>
+</h4>
+
+**Gabriel Ilian**
+
+[![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gabriel-ilian-fonseca-barboza-6458a0203/)
+[![Outlook Badge](https://img.shields.io/badge/Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:gabriel.barboza@gec.inatel.br)
+
 
 <h4 align="left">
     <img style="border-radius: 50%; margin-right: 30px" src="https://avatars.githubusercontent.com/pedro-balestra" width="180px;" alt=""/>
@@ -110,8 +119,8 @@ $ flutter run
 
 **Pedro Balestra**
 
-[![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pedro-balestra/)
-[![Outlook Badge](https://img.shields.io/badge/Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:pedro.balestra@gec.inatel.br)
+[![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)]([https://www.linkedin.com/in/pedro-balestra/)
+[![Outlook Badge](https://img.shields.io/badge/Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:gabriel.barboza@gec.inatel.br)
 
 
 
