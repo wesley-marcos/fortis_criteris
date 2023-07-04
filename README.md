@@ -2,8 +2,7 @@
 <h1 align="center">
     <img align="center" src="Images\logo_rounded.png" width="300px;" alt="logo"/>
 </h1>
-<!-- <h3 align="center">✅ Concluído ✅</h3> -->
-<h3 align="center">🛠 Em Desenvolvimento 🛠</h3>
+<h3 align="center">✅ Concluído ✅</h3> 
 
 <p align="center">
  <a href="#-sobre-o-projeto">Sobre o projeto</a> •
